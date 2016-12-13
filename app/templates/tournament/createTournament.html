@@ -1,0 +1,34 @@
+<div class="well col-md-12">
+    <form novalidate class="create-user-form">
+        <uib-tabset type="pills">
+            <uib-tab index="0" heading="Create tournament">
+                <div class="container col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Name</span>
+                        <input class="form-control" ng-model="tCtrl.tournament.name" name="name" ng-model-options="{ updateOn: 'blur' }" required>
+
+                    </div>
+                    <div class=" input-group">
+                        <span class="input-group-addon">Type</span>
+                        <select ng-model="tCtrl.tournament.type" class="form-control">
+                            <option value="1">1. Swiss</option>
+                            <option value="2">2. Round Robin</option>
+                            <option value="3">3. Something else</option>
+                        </select>
+
+                    </div>
+                </div>
+              <button class="btn btn-default">Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+            </uib-tab>
+            <uib-tab index="1" heading="Add players" ng-disabled="form.name.$error.required">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">{{tCtrl.tournament.name}}</div>
+                    <div class="panel-body">Here goes body</div>
+                </div>
+            </uib-tab>
+            <uib-tab index="2" heading="Create Teams">
+                More Tab Content
+            </uib-tab>
+        </uib-tabset>
+    </form>
+</div>
