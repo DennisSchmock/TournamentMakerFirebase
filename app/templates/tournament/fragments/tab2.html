@@ -1,0 +1,20 @@
+<div class="container col-md-4">
+    <div class="panel panel-primary">
+        <div class="panel-heading">{{tCtrl.tournament.name}}</div>
+        <label class="label">Add player</label>
+        <div class="input-group">
+            <span class="input-group-addon">Navn</span>
+            <input class="form-control" ng-model="tCtrl.player" name="name"
+                   ng-model-options="{ updateOn: 'blur' }" required>
+        </div>
+        <button class="btn btn-primary">add Player</button>
+
+        <div class="panel-body">Here goes body</div>
+    </div>
+</div>
+
+<div class="container col-md-4">
+    <div class="panel panel-primary">
+        <div class="panel-heading">{{tCtrl.tournament.name}}</div>
+    </div>
+</div>
