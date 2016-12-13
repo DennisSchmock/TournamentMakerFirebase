@@ -5,29 +5,41 @@
 
 angular.module('myApp.tournamentView')
     .factory('tournamentFactory', [function () {
-        var tournamentFactory = [];
-
         //**VAR declarations**//
-        tournamentFactory.tournaments = [];
+        var players = [];
+        var tournaments = [];
+        var tournament = {};
 
-
-
-        //**function declarations**//
-        tournamentFactory.createTournament = createTournament;
-        tournamentFactory.addPlayer = addPlayer;
+        var service = {
+            createTournament: createTournament,
+            addPlayer: addPlayer,
+            players: players,
+            tournaments: tournaments,
+            tournament: tournament,
+            getTournament: getTournament,
+            getPlayers: getPlayers
+        }
+        return service;
 
 
 
         //**functions**//
-        function createTournament(){
+        function createTournament() {
 
         }
-
-        function addPlayer() {
-
+        function getTournament(){
+            return tournament;
         }
 
-        return tournamentFactory;
+        function getPlayers(){
+            return players;
+        }
+
+
+        function addPlayer(player) {
+            players.push(player);
+        }
+
 
 
     }]);

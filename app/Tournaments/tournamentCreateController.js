@@ -21,17 +21,28 @@ function TournamentCreateCtrl(tournamentFactory) {
 
     vm.tournament = {};
     vm.tournament.name = '';
+    vm.player = {};
+    vm.players = tournamentFactory.getPlayers();
 
 
 
 
     //**Function declarations**//
-    var createTournament = createTournament;
+    vm.createTournament = createTournament;
+    vm.addPlayer = addPlayer;
 
     //**Functions**//
     function createTournament() {
 
     }
+
+    function addPlayer(player){
+        tournamentFactory.addPlayer(player);
+
+        vm.player = {};
+    }
+
+
 
 
 };

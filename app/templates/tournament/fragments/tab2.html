@@ -4,17 +4,21 @@
         <label class="label">Add player</label>
         <div class="input-group">
             <span class="input-group-addon">Navn</span>
-            <input class="form-control" ng-model="tCtrl.player" name="name"
+            <input class="form-control" ng-model="player.name" name="name"
                    ng-model-options="{ updateOn: 'blur' }" required>
         </div>
-        <button class="btn btn-primary">add Player</button>
+        <button class="btn btn-primary" ng-click="tCtrl.addPlayer(player);player = {};name.$setPristine();name.$setUntouched()" disabled="{{myForm.myInput.$valid}}">add Player</button>
 
-        <div class="panel-body">Here goes body</div>
     </div>
 </div>
 
 <div class="container col-md-4">
     <div class="panel panel-primary">
         <div class="panel-heading">{{tCtrl.tournament.name}}</div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <li ng-repeat="player in tCtrl.players">{{player.name}}</li>
+            </ul>
+        </div>
     </div>
 </div>
