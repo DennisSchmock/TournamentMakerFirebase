@@ -27,7 +27,7 @@ angular.module('myApp.tournamentView')
 
         //**functions**//
         function createTournament() {
-
+            //Add api-call here
         }
 
         function addDiscipline(discipline){
