@@ -2,6 +2,7 @@
 
         <uib-tabset type="pills">
             <uib-tab index="0" heading="Create tournament">
+                <br>
                 <ng-include src="'templates/tournament/fragments/tab1.html'"></ng-include>
             </uib-tab>
             <uib-tab index="1" heading="Add players" ng-disabled="form.name.$error.required">
