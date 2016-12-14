@@ -5,12 +5,12 @@
         </div>
         <div class="panel-body">
 
-            <form novalidate class="create-user-form">
+            <form name="tCtrl.tournamentBasic" novalidate class="create-user-form">
                 <div class="container-fluid col-sm-12">
                     <div class="input-group ">
                         <span class="input-group-addon">Name</span>
                         <input class="form-control" ng-model="tCtrl.tournament.name" name="name"
-                               ng-model-options="{ updateOn: 'blur' }" required>
+                                required>
 
                     </div>
                 </div>
@@ -18,7 +18,8 @@
 
                     <div class=" input-group ">
                         <span class="input-group-addon">Type</span>
-                        <select ng-model="tCtrl.tournament.type" class="form-control">
+                        <select name="type" ng-model="tCtrl.tournament.type" class="form-control" required>
+                            <option value="" disabled selected>Select your option</option>
                             <option value="1">Swiss - with selected disciplines</option>
                             <option value="2">Round Robin</option>
                             <option value="3">Double Round Robin</option>
@@ -28,9 +29,11 @@
 
                     </div>
                 </div>
-                <button class="btn btn-default" ng-click="tCtrl.createTournament()">Next <span
-                        class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+                <button class="btn btn-default" ng-click="tCtrl.createTournament()" ng-disabled="tCtrl.tournamentBasic.$invalid">Next
+                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true" ></span></button>
             </form>
+{{tCtrl.tournamentBasic.$invalid}}
+
 
         </div>
 
@@ -47,10 +50,13 @@
             <div ng-show="tCtrl.tournament.type==1">
                 <div class="input-group">
                     <span class="input-group-addon">Add discipline</span>
-                    <input code="13" dl-key-code="tCtrl.addDiscipline(tCtrl.tournament.discipline);"
+                    <input code="13" dl-key-code="tCtrl.addDiscipline(tCtrl.tournament.discipline);tCtrl.tournament.discipline = ''"
                            class="form-control"
                            ng-model="tCtrl.tournament.discipline">
                 </div>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="discipline in tCtrl.tournament.disciplines track by $index">{{discipline.name}}</li>
+                </ul>
 
             </div>
             <div ng-show="tCtrl.tournament.type==2">Round Robin</div>

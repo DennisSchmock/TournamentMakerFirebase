@@ -9,6 +9,7 @@ angular.module('myApp.tournamentView')
         var players = [];
         var tournaments = [];
         var tournament = {};
+        tournament.disciplines = [];
 
         var service = {
             createTournament: createTournament,
@@ -17,7 +18,8 @@ angular.module('myApp.tournamentView')
             tournaments: tournaments,
             tournament: tournament,
             getTournament: getTournament,
-            getPlayers: getPlayers
+            getPlayers: getPlayers,
+            addDiscipline: addDiscipline
         }
         return service;
 
@@ -26,6 +28,14 @@ angular.module('myApp.tournamentView')
         //**functions**//
         function createTournament() {
 
+        }
+
+        function addDiscipline(discipline){
+            var disc = {};
+            disc.name = discipline;
+            disc.id = tournament.disciplines.length;
+
+            tournament.disciplines.push(disc);
         }
         function getTournament(){
             return tournament;

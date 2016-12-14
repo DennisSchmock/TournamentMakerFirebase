@@ -18,7 +18,12 @@ function TournamentCreateCtrl(tournamentFactory) {
     var vm = this;
 
     //**Var declarations**//
+    vm.tabs = [];
 
+
+    vm.tabs.tab1 = true;
+    vm.tabs.tab2 = true;
+    vm.tabs.tab3 = true;
     vm.tournament = tournamentFactory.getTournament();
     vm.tournament.name = '';
     vm.tournament.disciplines = [];
@@ -31,11 +36,11 @@ function TournamentCreateCtrl(tournamentFactory) {
     //**Function declarations**//
     vm.createTournament = createTournament;
     vm.addPlayer = addPlayer;
-    vm.alerts = alerts;
+    vm.addDiscipline = addDiscipline;
 
     //**Functions**//
     function addDiscipline(discipline){
-    alert(discipline);
+     tournamentFactory.addDiscipline(discipline);
     }
 
     function createTournament() {

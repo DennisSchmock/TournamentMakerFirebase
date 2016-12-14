@@ -1,14 +1,14 @@
 <div class="well col-md-12">
 
         <uib-tabset type="pills">
-            <uib-tab index="0" heading="Create tournament">
+            <uib-tab index="0" heading="Create tournament" >
                 <br>
                 <ng-include src="'templates/tournament/fragments/tab1.html'"></ng-include>
             </uib-tab>
-            <uib-tab index="1" heading="Add players" ng-disabled="form.name.$error.required">
+            <uib-tab index="1" heading="Add players" disable="tCtrl.tabs.tab1">
                 <ng-include src="'templates/tournament/fragments/tab2.html'"></ng-include>
             </uib-tab>
-            <uib-tab index="2" heading="Create Teams">
+            <uib-tab index="2" heading="Create Teams" disable="tCtrl.tabs.tab2">
                 More Tab Content
             </uib-tab>
         </uib-tabset>
