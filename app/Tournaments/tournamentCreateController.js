@@ -19,15 +19,16 @@ function TournamentCreateCtrl(tournamentFactory) {
 
     //**Var declarations**//
     vm.tabs = [];
-
     vm.active = 0;
+
+
     vm.tabs.tab1 = true;
     vm.tabs.tab2 = true;
     vm.tabs.tab3 = true;
     vm.tournament = tournamentFactory.getTournament();
     vm.tournament.name = '';
     vm.tournament.disciplines = [];
-    vm.player = {};
+    vm.player = tournamentFactory.getPlayer();
     vm.players = tournamentFactory.getPlayers();
 
 
@@ -44,15 +45,15 @@ function TournamentCreateCtrl(tournamentFactory) {
     }
 
     function createTournament(form) {
-        if(form.$valid){
-            vm.active = 1;
-            tournamentFactory.createTournament(vm.tournament);
-            vm.tabs.tab1 = false;
-
-        }
+    if (form.$valid){
+        vm.tabs.tab1 = false;
+        tournamentFactory.createTournament(vm.tournament);
+        vm.active = 1;
+    }
     }
 
     function addPlayer(player){
+
         tournamentFactory.addPlayer(player);
 
         vm.player = {};
