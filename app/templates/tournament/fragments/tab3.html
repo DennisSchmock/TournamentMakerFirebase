@@ -1,0 +1,22 @@
+<form name="tCtrl.tournamentTab2" novalidate>
+    <div class="container-fluid col-sm-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Player List</div>
+            <ul class="list-group">
+                <li ng-repeat="player in tCtrl.players">{{player.name}}</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="container col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">{{tCtrl.tournament.name}}</div>
+            <div class="panel-body">
+
+            </div>
+        </div>
+    </div>
+
+</form>
+{{tCtrl.player.name}}

@@ -21,7 +21,8 @@ angular.module('myApp.tournamentView')
             getTournament: getTournament,
             getPlayers: getPlayers,
             addDiscipline: addDiscipline,
-            getPlayer: getPlayer
+            getPlayer: getPlayer,
+            savePlayerList: savePlayerList
         }
         return service;
 
@@ -54,6 +55,10 @@ angular.module('myApp.tournamentView')
 
         function addPlayer(player) {
             players.push(player);
+        }
+
+        function savePlayerList(){
+            //todo post to api
         }
 
 

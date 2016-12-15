@@ -1,20 +1,26 @@
 <form name="tCtrl.tournamentTab2" novalidate>
     <div class="container-fluid col-sm-4">
         <div class="panel panel-primary">
-            <div class="panel-heading">{{tCtrl.tournament.name}}</div>
-            <label class="label">Add player</label>
 
-            <div class="input-group">
-                <span class="input-group-addon">Navn</span>
-                <input ng-model="tCtrl.player.name" code="13"
-                       dl-key-code="tCtrl.addPlayer(tCtrl.player);tCtrl.player = {};"
-                       class="form-control" name="name"
-                       required>
+            <div class="panel-heading">{{tCtrl.tournament.name}}</div>
+            <div class="panel-body">
+                <div class="btn-group">
+                    <button class="btn  btn-info">Previous</button>
+                    <button ng-click="tCtrl.nextAndSave()" class="btn  btn-info" >Next</button>
+
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon" >Navn</span>
+                    <input placeholder="Add Player" ng-model="tCtrl.player.name" code="13"
+                           dl-key-code="tCtrl.addPlayer(tCtrl.player)"
+                           class="form-control" name="name"
+                           required>
+                </div>
+                <button class="btn btn-primary"
+                        ng-click="tCtrl.addPlayer(tCtrl.player)">
+                    add Player
+                </button>
             </div>
-            <button class="btn btn-primary"
-                    ng-click="tCtrl.addPlayer(tCtrl.player);player = {};name.$setPristine();name.$setUntouched()">
-                add Player
-            </button>
 
         </div>
     </div>

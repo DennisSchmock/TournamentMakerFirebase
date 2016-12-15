@@ -6,7 +6,7 @@ angular.module('myApp.tournamentView', ['ngRoute'])
         $routeProvider.when('/tournaments', {
             templateUrl: 'templates/tournament/tournamentview.html',
             controller: 'TournamentCtrl',
-            controllerAs: 'tCtrl'
+            controllerAs: 'tourCtrl'
         });
     }])
 

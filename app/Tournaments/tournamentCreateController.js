@@ -32,34 +32,39 @@ function TournamentCreateCtrl(tournamentFactory) {
     vm.players = tournamentFactory.getPlayers();
 
 
-
-
     //**Function declarations**//
     vm.createTournament = createTournament;
     vm.addPlayer = addPlayer;
     vm.addDiscipline = addDiscipline;
+    vm.nextAndSave = nextAndSave;
 
     //**Functions**//
-    function addDiscipline(discipline){
-     tournamentFactory.addDiscipline(discipline);
+    function addDiscipline(discipline) {
+        tournamentFactory.addDiscipline(discipline);
     }
 
     function createTournament(form) {
-    if (form.$valid){
-        vm.tabs.tab1 = false;
-        tournamentFactory.createTournament(vm.tournament);
-        vm.active = 1;
-    }
-    }
-
-    function addPlayer(player){
-
-        tournamentFactory.addPlayer(player);
-
-        vm.player = {};
+        if (form.$valid) {
+            vm.tabs.tab1 = false;
+            tournamentFactory.createTournament(vm.tournament);
+            vm.active = 1;
+        }
     }
 
+    function addPlayer(player) {
+        if (vm.player != undefined) {
+            console.log('hit this');
+            tournamentFactory.addPlayer(player);
+            vm.player = undefined;
+        }
 
+    }
+
+    function nextAndSave(){
+        vm.active = 2;
+        vm.tabs.tab2 = false;
+        tournamentFactory.savePlayerList(vm.players);
+    }
 
 
 };
