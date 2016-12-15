@@ -7,6 +7,7 @@ angular.module('myApp.tournamentView')
     .factory('tournamentFactory', [function () {
         //**VAR declarations**//
         var players = [];
+        var player = {};
         var tournaments = [];
         var tournament = {};
         tournament.disciplines = [];
@@ -19,15 +20,20 @@ angular.module('myApp.tournamentView')
             tournament: tournament,
             getTournament: getTournament,
             getPlayers: getPlayers,
-            addDiscipline: addDiscipline
+            addDiscipline: addDiscipline,
+            getPlayer: getPlayer
         }
         return service;
 
 
 
         //**functions**//
-        function createTournament() {
+        function createTournament(tournament) {
+        //Todo, do something with tournament
+        }
 
+        function getPlayer(){
+            return player;
         }
 
         function addDiscipline(discipline){

@@ -29,7 +29,7 @@
 
                     </div>
                 </div>
-                <button class="btn btn-default" ng-click="tCtrl.createTournament()" ng-disabled="tCtrl.tournamentBasic.$invalid">Next
+                <button class="btn btn-default" ng-click="tCtrl.createTournament(tCtrl.tournamentBasic)" ng-disabled="tCtrl.tournamentBasic.$invalid">Next
                     <span class="glyphicon glyphicon-arrow-right" aria-hidden="true" ></span></button>
             </form>
 {{tCtrl.tournamentBasic.$invalid}}
