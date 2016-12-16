@@ -1,0 +1,8 @@
+2016-12-16T08:29:47.008877000 0.050649s notice: Recursively removing directory /Users/dennisschmock/IdeaProjects/TournamentMakerRethink/rethinkdb_data/tmp
+2016-12-16T08:29:47.010447000 0.052222s notice: Initializing directory /Users/dennisschmock/IdeaProjects/TournamentMakerRethink/rethinkdb_data
+2016-12-16T08:29:47.010506000 0.052277s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/dennisschmock/IdeaProjects/TournamentMakerRethink/rethinkdb_data' did not already exist or is empty.)
+2016-12-16T08:29:47.010534000 0.052306s notice: Running rethinkdb 2.3.5 (CLANG 7.3.0 (clang-703.0.31))...
+2016-12-16T08:29:47.022327000 0.064100s notice: Running on Darwin 15.0.0 x86_64
+2016-12-16T08:29:47.022366000 0.064137s notice: Loading data from directory /Users/dennisschmock/IdeaProjects/TournamentMakerRethink/rethinkdb_data
+2016-12-16T08:29:47.088572000 0.130343s info: Automatically using cache size of 4207 MB
+2016-12-16T08:29:47.089380000 0.131151s error: TCP socket creation failed for port 29015: Address already in use.

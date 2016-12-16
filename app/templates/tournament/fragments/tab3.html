@@ -1,17 +1,45 @@
 <form name="tCtrl.tournamentTab2" novalidate>
     <div class="container-fluid col-sm-4">
         <div class="panel panel-primary">
-            <div class="panel-heading">Player List</div>
-            <ul class="list-group">
-                <li ng-repeat="player in tCtrl.players">{{player.name}}</li>
-            </ul>
-
+            <div class="panel-heading">Available Players</div>
+            <div class="panel-body">
+                <ul class="list-group list-unstyled">
+                    <li class="list-group-item" ng-repeat="player in tCtrl.players">{{player.name}}</li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <div class="container col-md-4">
         <div class="panel panel-primary">
-            <div class="panel-heading">{{tCtrl.tournament.name}}</div>
+            <div class="panel-heading">Create teams</div>
+            <div class="panel-body">
+                <div class="btn-group">
+                    <label class="btn btn-danger" ng-model="checkModel" uib-btn-radio="'random'">Random Teams</label>
+                    <label class="btn btn-success" ng-model="checkModel" uib-btn-radio="'custom'">Custom Teams</label>
+                </div>
+                <div ng-show="checkModel == 'random'">
+                    <div class="input-group">
+                        <span class="input-group-addon">Number of teams</span>
+                        <input class="form-control">
+                    </div>
+                    <button class="btn btn-primary">Create random teams</button>
+                </div>
+                <div ng-show="checkModel == 'custom'">
+                    <div class="input-group">
+                        <span class="input-group-addon">Team name</span>
+                        <input class="form-control">
+                        <span button class="btn input-group-addon btn-primary"><i class="glyphicon glyphicon-plus"></i> Add</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Teams</div>
             <div class="panel-body">
 
             </div>
@@ -19,4 +47,3 @@
     </div>
 
 </form>
-{{tCtrl.player.name}}
