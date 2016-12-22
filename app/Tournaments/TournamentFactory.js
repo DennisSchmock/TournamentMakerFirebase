@@ -10,6 +10,8 @@ angular.module('myApp.tournamentView')
         var player = {};
         var tournaments = [];
         var tournament = {};
+        var team = {};
+        var teams =[];
         tournament.disciplines = [];
 
         var service = {
@@ -18,11 +20,17 @@ angular.module('myApp.tournamentView')
             players: players,
             tournaments: tournaments,
             tournament: tournament,
+            team: team,
+            teams: teams,
             getTournament: getTournament,
             getPlayers: getPlayers,
             addDiscipline: addDiscipline,
             getPlayer: getPlayer,
-            savePlayerList: savePlayerList
+            savePlayerList: savePlayerList,
+            getTeam: getTeam,
+            getTeams: getTeams,
+            addTeam: addTeam
+
         }
         return service;
 
@@ -33,9 +41,12 @@ angular.module('myApp.tournamentView')
         //Todo, do something with tournament
         }
 
-        function getPlayer(){
-            return player;
+        function addTeam(team){
+            teams.push(team);
+            console.log(team);
         }
+
+
 
         function addDiscipline(discipline){
             var disc = {};
@@ -44,15 +55,9 @@ angular.module('myApp.tournamentView')
 
             tournament.disciplines.push(disc);
         }
-        function getTournament(){
-            return tournament;
-        }
-
-        function getPlayers(){
-            return players;
-        }
 
 
+        //Getters
         function addPlayer(player) {
             players.push(player);
         }
@@ -60,7 +65,23 @@ angular.module('myApp.tournamentView')
         function savePlayerList(){
             //todo post to api
         }
+        function getTeam(){
+            return team;
+        }
+        function getTeams(){
+            return teams;
+        }
 
+        function getPlayer(){
+            return player;
+        }
 
+        function getTournament(){
+            return tournament;
+        }
+
+        function getPlayers(){
+            return players;
+        }
 
     }]);

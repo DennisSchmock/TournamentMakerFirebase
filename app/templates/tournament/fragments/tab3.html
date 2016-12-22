@@ -4,7 +4,7 @@
             <div class="panel-heading">Available Players</div>
             <div class="panel-body">
                 <ul class="list-group list-unstyled">
-                    <li class="list-group-item" ng-repeat="player in tCtrl.players">{{player.name}}</li>
+                    <player-list></player-list>
                 </ul>
             </div>
         </div>
@@ -28,8 +28,9 @@
                 <div ng-show="checkModel == 'custom'">
                     <div class="input-group">
                         <span class="input-group-addon">Team name</span>
-                        <input class="form-control">
-                        <span button class="btn input-group-addon btn-primary"><i class="glyphicon glyphicon-plus"></i> Add</span>
+                        <input ng-model="tCtrl.team.name" class="form-control" my-enter="tCtrl.addTeam(tCtrl.team)">
+                        <span ng-click="tCtrl.addTeam(tCtrl.team)" button class="btn input-group-addon btn-primary"><i
+                                class="glyphicon glyphicon-plus"></i> Add</span>
 
                     </div>
                 </div>
@@ -41,7 +42,7 @@
         <div class="panel panel-primary">
             <div class="panel-heading">Teams</div>
             <div class="panel-body">
-
+                <team-list></team-list>
             </div>
         </div>
     </div>

@@ -6,7 +6,8 @@ angular.module('myApp', [
     'myApp.tournamentView',
     'myApp.players',
     'myApp.version',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'firebase'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
 

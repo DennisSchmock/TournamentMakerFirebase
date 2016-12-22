@@ -11,8 +11,7 @@
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon" >Navn</span>
-                    <input placeholder="Add Player" ng-model="tCtrl.player.name" code="13"
-                           dl-key-code="tCtrl.addPlayer(tCtrl.player)"
+                    <input placeholder="Add Player" ng-model="tCtrl.player.name" my-enter="tCtrl.addPlayer(tCtrl.player)"
                            class="form-control" name="name"
                            required>
                 </div>
@@ -30,7 +29,7 @@
             <div class="panel-heading">{{tCtrl.tournament.name}}</div>
             <div class="panel-body">
                 <ul class="list-group">
-                    <li ng-repeat="player in tCtrl.players">{{player.name}}</li>
+                    <player-list></player-list>
                 </ul>
             </div>
         </div>

@@ -30,6 +30,8 @@ function TournamentCreateCtrl(tournamentFactory) {
     vm.tournament.disciplines = [];
     vm.player = tournamentFactory.getPlayer();
     vm.players = tournamentFactory.getPlayers();
+    vm.team = tournamentFactory.getTeam();
+    vm.teams = tournamentFactory.getTeams();
 
 
     //**Function declarations**//
@@ -37,6 +39,7 @@ function TournamentCreateCtrl(tournamentFactory) {
     vm.addPlayer = addPlayer;
     vm.addDiscipline = addDiscipline;
     vm.nextAndSave = nextAndSave;
+    vm.addTeam = addTeam;
 
     //**Functions**//
     function addDiscipline(discipline) {
@@ -58,6 +61,14 @@ function TournamentCreateCtrl(tournamentFactory) {
             vm.player = undefined;
         }
 
+    }
+    function addTeam(team){
+        console.log('hit this');
+        if (vm.team!=undefined){
+            tournamentFactory.addTeam(team);
+            console.log(team);
+            vm.team = undefined;
+        }
     }
 
     function nextAndSave(){
