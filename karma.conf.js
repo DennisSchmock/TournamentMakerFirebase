@@ -18,8 +18,8 @@ module.exports = function (config) {
 
 
             'components/**/*.js',
-            'Tour*/**/*.js',
-            'Pla*/**/*.js'
+            'Tour*/*.js',
+            'Pla*/*.js'
         ],
 
         autoWatch: true,
