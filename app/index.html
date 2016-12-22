@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/firebaseui/dist/firebaseui.css">
 
 
 </head>
@@ -50,16 +51,28 @@
 
 <div ng-view></div>
 
-<div>Angular seed app: v<span app-version></span></div>
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
 
+<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAusMf7uulr8ZFRTMm9sASx2AjTID08DnI",
+        authDomain: "itournamentmaker.firebaseapp.com",
+        databaseURL: "https://itournamentmaker.firebaseio.com",
+        storageBucket: "itournamentmaker.appspot.com",
+        messagingSenderId: "833859407428"
+    };
+    firebase.initializeApp(config);
+</script>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/firebase/firebase.js"></script>
 <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+<script src="bower_components/firebaseui/dist/firebaseui.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 <script src="bower_components/angular-loader/angular-loader.js"></script>
