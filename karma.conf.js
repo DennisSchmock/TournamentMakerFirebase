@@ -12,14 +12,14 @@ module.exports = function (config) {
             'bower_components/angular-animate/angular-animate.js',
             'bower_components/angular-bootstrap/ui-bootstrap.js',
             'bower_components/angularfire/dist/angularfire.js',
-
+            ''
 
             'app.js',
 
 
-            'components/**/*.js',
-            'Tour*/*.js',
-            'Pla*/*.js'
+            'components/*.js',
+            'Tournaments/*.js',
+            'Players/*.js'
         ],
 
         autoWatch: true,
