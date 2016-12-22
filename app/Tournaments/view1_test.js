@@ -1,15 +1,15 @@
 'use strict';
 
-describe('myApp.view1 module', function() {
+describe('myApp.tournamentView module', function() {
 
-  beforeEach(module('myApp.view1'));
+  beforeEach(module('myApp.tournamentView'));
 
-  describe('view1 controller', function(){
+  describe('tournamentView controller', function(){
 
     it('should ....', inject(function($controller) {
       //spec body
-      var view1Ctrl = $controller('TournamentCtrl');
-      expect(view1Ctrl).toBeDefined();
+      var TournamentCtrl = $controller('TournamentCtrl');
+      expect(TournamentCtrl).toBeDefined();
     }));
 
   });
