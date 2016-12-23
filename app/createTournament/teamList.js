@@ -2,7 +2,7 @@
  * Created by Dennis on 21-12-2016.
  */
 angular.module('myApp').component('teamList', {
-    templateUrl: 'Tournaments/teamList.html',
+    templateUrl: 'createTournament/teamList.html',
     controller: TeamListController
 });
 

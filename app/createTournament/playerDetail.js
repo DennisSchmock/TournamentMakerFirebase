@@ -3,7 +3,7 @@
  */
 angular.module('myApp')
 .component('playerDetail',{
-    templateUrl:'Tournaments/playerDetail.html',
+    templateUrl:'createTournament/playerDetail.html',
     controller: PlayerDetailController,
     bindings:{
         player: '<',

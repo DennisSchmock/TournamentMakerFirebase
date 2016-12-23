@@ -1,0 +1,16 @@
+<body ng-controller="TournamentCtrl as tourCtrl">
+<ul>
+    <li ng-repeat="message in tourCtrl.messages">
+        <!-- edit a message -->
+        <input ng-model="message.text" ng-change="tourCtrl.messages.$save(message)" />
+        <!-- delete a message -->
+        <button ng-click="tourCtrl.messages.$remove(message)">Delete Message</button>
+    </li>
+</ul>
+<!-- push a new message onto the array -->
+<form ng-submit="tourCtrl.addMessage()">
+    <input ng-model="tourCtrl.newMessageText" />
+    <button type="submit">Add Message</button>
+</form>
+</body>
+</html>

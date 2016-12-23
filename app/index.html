@@ -55,7 +55,30 @@
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
 
-<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="bower_components/angular-loader/angular-loader.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="app.js"></script>
+<script src="Tournaments/tournamentController.js"></script>
+<script src="Players/PlayerCtrl.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+<script src="createTournament/tournamentCreateController.js"></script>
+<script src="createTournament/TournamentFactory.js"></script>
+<script src="components/globalDirectives.js"></script>
+<script src="components/globalComponents/editableField.js"></script>
+<script src="createTournament/teamDetail.js"></script>
+<script src="createTournament/teamList.js"></script>
+<script src="createTournament/playerDetail.js"></script>
+<script src="createTournament/playerList.js"></script>
 <script>
     // Initialize Firebase
     var config = {
@@ -67,32 +90,6 @@
     };
     firebase.initializeApp(config);
 </script>
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/firebase/firebase.js"></script>
-<script src="bower_components/angularfire/dist/angularfire.min.js"></script>
-<script src="bower_components/firebaseui/dist/firebaseui.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-<script src="bower_components/angular-loader/angular-loader.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-<script src="app.js"></script>
-<script src="Tournaments/tournamentController.js"></script>
-<script src="Players/PlayerCtrl.js"></script>
-<script src="components/version/version.js"></script>
-<script src="components/version/version-directive.js"></script>
-<script src="components/version/interpolate-filter.js"></script>
-<script src="Tournaments/tournamentCreateController.js"></script>
-<script src="Tournaments/TournamentFactory.js"></script>
-<script src="components/globalDirectives.js"></script>
-<script src="components/globalComponents/editableField.js"></script>
-<script src="Tournaments/teamDetail.js"></script>
-<script src="Tournaments/teamList.js"></script>
-<script src="Tournaments/playerDetail.js"></script>
-<script src="Tournaments/playerList.js"></script>
-
 
 </body>
 </html>

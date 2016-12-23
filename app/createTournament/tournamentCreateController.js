@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.tournamentView')
+angular.module('myApp.tournamentCreateView',['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/createtournament', {
@@ -12,7 +12,7 @@ angular.module('myApp.tournamentView')
 
     .controller('TournamentCreateCtrl', TournamentCreateCtrl);
 
-TournamentCtrl.$inject = ['tournamentFactory'];
+TournamentCreateCtrl.$inject = ['tournamentFactory'];
 
 function TournamentCreateCtrl(tournamentFactory) {
     var vm = this;

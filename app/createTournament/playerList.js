@@ -3,7 +3,7 @@
  */
 angular.module('myApp')
 .component('playerList',{
-    templateUrl: 'Tournaments/playerList.html',
+    templateUrl: 'createTournament/playerList.html',
     controller: playerListController
 });
 

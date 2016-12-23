@@ -1,5 +1,5 @@
 <form name="tCtrl.tournamentTab2" novalidate>
-    <div class="container-fluid col-sm-4">
+    <div class="container col-md-4">
         <div class="panel panel-primary">
             <div class="panel-heading">Available Players</div>
             <div class="panel-body">
@@ -28,7 +28,7 @@
                 <div ng-show="checkModel == 'custom'">
                     <div class="input-group">
                         <span class="input-group-addon">Team name</span>
-                        <input ng-model="tCtrl.team.name" class="form-control" my-enter="tCtrl.addTeam(tCtrl.team)">
+                        <input ng-model="tCtrl.team.name" class="form-control" my-enter="tCtrl.addTeam(tCtrl.team)" placeholder="Add team">
                         <span ng-click="tCtrl.addTeam(tCtrl.team)" button class="btn input-group-addon btn-primary"><i
                                 class="glyphicon glyphicon-plus"></i> Add</span>
 
