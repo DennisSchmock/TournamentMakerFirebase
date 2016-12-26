@@ -8,6 +8,7 @@ angular.module('myApp', [
     'myApp.tournamentCreateView',
     'myApp.players',
     'myApp.version',
+    'myApp.auth',
     'ui.bootstrap'
 
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
