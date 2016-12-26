@@ -22,9 +22,9 @@
 
 
 </head>
-<body>
+<body >
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" ng-controller="MainController as mactrl">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -35,14 +35,19 @@
             <a class="navbar-brand" href="#">iTournamentMaker</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#!/tournaments">Tournaments</a></li>
-                <li><a href="#!/createtournament">Create</a></li>
-                <li><a href="#!/players">Players</a></li>
+            <ul class="nav navbar-nav navbar-left">
+                <li ><a href="#!/tournaments">Tournaments</a></li>
+                <li ><a href="#!/createtournament">Create</a></li>
+                <li ><a href="#!/players">Players</a></li>
+            </ul><ul class="nav navbar-right">
+                <li><user-login></user-login></li>
             </ul>
+
         </div>
     </div>
+
 </nav>
+<div> </div>
 
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
@@ -66,6 +71,8 @@
 <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 <script src="bower_components/angularfire/dist/angularfire.js"></script>
 <script src="app.js"></script>
+<script src="main/MainController.js"></script>
+
 <script src="Tournaments/tournamentController.js"></script>
 <script src="Players/PlayerCtrl.js"></script>
 <script src="components/version/version.js"></script>
@@ -79,6 +86,11 @@
 <script src="createTournament/teamList.js"></script>
 <script src="createTournament/playerDetail.js"></script>
 <script src="createTournament/playerList.js"></script>
+<script src="Auth/Auth.js"></script>
+<script src="Auth/authFactory.js"></script>
+<script src="Auth/login.js"></script>
+<script src="Auth/firebaseAuthService.js"></script>
+
 <script>
     // Initialize Firebase
     var config = {
