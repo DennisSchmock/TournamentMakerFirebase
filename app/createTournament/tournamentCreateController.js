@@ -6,15 +6,23 @@ angular.module('myApp.tournamentCreateView',['ngRoute'])
         $routeProvider.when('/createtournament', {
             templateUrl: 'templates/tournament/createTournament.html',
             controller: 'TournamentCreateCtrl',
-            controllerAs: 'tCtrl'
+            controllerAs: 'tCtrl',
+            resolve: {
+                // controller will not be loaded until $waitForSignIn resolves
+                // Auth refers to our $firebaseAuth wrapper in the factory below
+                "currentAuth": ["Auth", function(Auth) {
+                    // $waitForSignIn returns a promise so the resolve waits for it to complete
+                    return Auth.$waitForSignIn();
+                }]
+            }
         });
     }])
 
     .controller('TournamentCreateCtrl', TournamentCreateCtrl);
 
-TournamentCreateCtrl.$inject = ['tournamentFactory'];
+TournamentCreateCtrl.$inject = ['tournamentFactory','currentAuth'];
 
-function TournamentCreateCtrl(tournamentFactory) {
+function TournamentCreateCtrl(tournamentFactory,currentAuth) {
     var vm = this;
 
     //**Var declarations**//
