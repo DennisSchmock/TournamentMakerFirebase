@@ -31,7 +31,6 @@
     border-radius: 0;
     margin-bottom: 0;
     font-size: 12px;
-    letter-spacing: 5px;
 }
 
 .navbar-nav li a:hover {
@@ -46,6 +45,11 @@
     background-color: #78FA89;
 }
 
-.login-form {
-
+.login-form td{
+    padding: 2px;
+}
+.userlogin{
+    line-height: 12px;
+    font-size: 12px;
+    width: 120px;
 }

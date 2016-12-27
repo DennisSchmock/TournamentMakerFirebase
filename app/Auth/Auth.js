@@ -4,9 +4,9 @@
 angular.module('myApp.auth', ['firebase'])
     .controller('AuthController', AuthController);
 
-AuthController.$inject = ['authFactory'];
+AuthController.$inject = ['authFactory','$location'];
 
-function AuthController(authFactory) {
+function AuthController(authFactory,$location) {
     var vm = this;
 
     vm.signIn = signIn;
@@ -23,8 +23,17 @@ function AuthController(authFactory) {
     //**Function implementations**//
 
     function signOut() {
-        authFactory.firebaseUser = null;
-        vm.firebaseUser = null;
+        vm.auth.$signOut()
+            .then(function(){
+                alert("Signed out");
+                $location.path('/');
+                authFactory.firebaseUser = null;
+                vm.firebaseUser = null;
+
+            },function () {
+                alert("Not signed out");
+            })
+
 
 
     }

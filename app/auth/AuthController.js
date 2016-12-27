@@ -9,7 +9,7 @@ function AuthController(authFactory) {
     var vm = this;
 
     vm.signIn = signIn;
-    vm.createUser = createUser;
+
 
     function signIn() {
         vm.firebaseUser = null;
@@ -23,16 +23,5 @@ function AuthController(authFactory) {
             });
     };
 
-    function createUser() {
-        vm.message = null;
-        vm.error = null;
-        authFactory.$createUserWithEmailAndPassword(vm.email, vm.password)
-            .then(function (firebaseUser) {
-                vm.message = "User created with uid: " + firebaseUser.uid;
-            })
-            .catch(function (error) {
-                $scope.error = error;
 
-            })
-    }
 }

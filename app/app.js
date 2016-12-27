@@ -10,7 +10,9 @@ angular.module('myApp', [
     'myApp.players',
     'myApp.version',
     'myApp.auth',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngMessages',
+    'ngAnimate'
 
 ]).run(["$rootScope", "$location", function ($rootScope, $location) {
     $rootScope.$on("$routeChangeError", function (event, next, previous, error) {

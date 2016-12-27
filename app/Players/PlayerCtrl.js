@@ -12,7 +12,7 @@ angular.module('myApp.players', ['ngRoute'])
                 // Auth refers to our $firebaseAuth wrapper in the factory below
                 "currentAuth": ["Auth", function(Auth) {
                     // $waitForSignIn returns a promise so the resolve waits for it to complete
-                    return Auth.$waitForSignIn();
+                    return Auth.$requireSignIn();
                 }]
             }
         });
