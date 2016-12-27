@@ -2,33 +2,44 @@
  * Created by Dennis on 27-12-2016.
  */
 angular.module('myApp.auth')
-.component('registerUser',{
-    templateUrl: 'auth/Register.html',
-    controller: 'RegisterController'
-})
+    .component('registerUser', {
+        templateUrl: 'auth/Register.html',
+        controller: 'RegisterController'
+    })
 
-.controller('RegisterController', RegisterController);
+    .controller('RegisterController', RegisterController);
 
-RegisterController.$inject = ['Auth','$firebaseArray'];
+RegisterController.$inject = ['Auth', '$firebaseArray'];
 
 function RegisterController(Auth) {
     var vm = this;
     vm.user = {};
     vm.registerUser = registerUser;
+    vm.interacted = interacted;
+    vm.interactedAndBlurred = interactedAndBlurred;
+
+    function interacted(field) {
+        return vm.submitted || field.$dirty;
+
+    }
+
+    function interactedAndBlurred(field) {
+        return vm.submitted || field.$dirty && field.$touched;
+
+    }
 
 
     function registerUser(user) {
         vm.message = null;
         vm.error = null;
-        vm.interacted = function(field) {
+        vm.interacted = function (field) {
             return $scope.submitted || field.$dirty;
         };
 
 
-
         Auth.$createUserWithEmailAndPassword(user.email, user.password)
             .then(function (firebaseUser) {
-                var ref = firebase.database().ref('users/' + firebaseUser.uid )
+                var ref = firebase.database().ref('users/' + firebaseUser.uid)
                     .set({
                         email: vm.user.email,
                         firstName: vm.user.firstName,

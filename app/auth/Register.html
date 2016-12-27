@@ -22,7 +22,12 @@
                name="email"
                placeholder="Email" required>
     </div>
-
+    <div class="error-messages"
+         ng-if="$ctrl.interactedAndBlurred(userForm.email)"
+         ng-messages="userForm.email.$error" role="alert">
+        <div ng-message="required">Please enter a value for this field.</div>
+        <div ng-message="email">This field must be a valid email address.</div>
+    </div>
 
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -36,10 +41,12 @@
                required>
     </div>
     <div class="error-messages"
-         ng-if="$ctrl.interacted(userForm.password)"
-         ng-messages="userForm.password.$error"
-         ng-messages-include="form-messages"></div>
+         ng-messages="userForm.password.$error">
+        <div ng-message="required">Please enter a value</div>
+
     </div>
+    </div>
+
 
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
