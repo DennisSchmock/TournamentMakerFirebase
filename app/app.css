@@ -54,6 +54,9 @@
     width: 120px;
 }
 
+.error-messages {
+    transition: 0.1s linear all;
+}
 .error-messages.ng-active {
     background:maroon;
     color:white;
