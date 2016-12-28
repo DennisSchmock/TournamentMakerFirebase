@@ -20,7 +20,7 @@
                id="email" type="email"
                class="form-control"
                name="email"
-               placeholder="Email" required>
+               placeholder="Email" required/>
     </div>
     <div class="error-messages"
          ng-if="$ctrl.interactedAndBlurred(userForm.email)"
@@ -31,20 +31,22 @@
 
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-        <input ng-model="$ctrl.user.password"
-               ng-minlength="8"
-               type="password"
-               class="form-control"
-               name="password"
-               placeholder="Password"
-               password-characters-validator
-               required>
+        <input
+                ng-minlength="3"
+                type="password"
+                id="password"
+                ng-model="$ctrl.user.password"
+                class="form-control"
+                name="password"
+                password-characters-validator
+
+                placeholder="Password" required/>
     </div>
     <div class="error-messages"
-         ng-messages="userForm.password.$error">
-        <div ng-message="required">Please enter a value</div>
+         ng-if="$ctrl.interacted(userForm.password)"
+         ng-messages="userForm.password.$error" role="alert">
+        <div ng-messages-include="form-messages"></div>
 
-    </div>
     </div>
 
 
@@ -59,16 +61,29 @@
                 match-validator="$ctrl.user.password"
                 required>
     </div>
+    <div class="error-messages"
+         ng-if="$ctrl.interacted(userForm.password_confirm)"
+         ng-messages="userForm.password_confirm.$error" role="alert">
+        <div ng-messages-include="form-messages"></div>
+
+    </div>
 
 
     <div class="input-group">
         <span class="input-group-addon">First Name</span>
-        <input ng-model="$ctrl.user.firstName" id="fname" type="text" class="form-control" name="password"
-               placeholder="First Name">
+        <input ng-model="$ctrl.user.firstName" id="fname" type="text" class="form-control" name="fname"
+               placeholder="First Name" required>
+    </div>
+    <div class="error-messages"
+         ng-if="$ctrl.interacted(userForm.fname)"
+         ng-messages="userForm.fname.$error" role="alert">
+        <div ng-message="required">Please enter a value for this field</div>
+        <div ng-message="minlength">Too short</div>
+
     </div>
     <div class="input-group">
         <span class="input-group-addon">Last Name</span>
-        <input ng-model="$ctrl.user.lastName" id="lname" type="text" class="form-control" name="password"
+        <input ng-model="$ctrl.user.lastName" id="lname" type="text" class="form-control" name="lname"
                placeholder="Last Name">
     </div>
     <button type="submit" class="btn btn-primary">Register</button>

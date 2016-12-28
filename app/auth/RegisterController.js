@@ -18,6 +18,11 @@ function RegisterController(Auth) {
     vm.interacted = interacted;
     vm.interactedAndBlurred = interactedAndBlurred;
 
+    vm.submitted = false;
+    vm.submit = function() {
+        vm.submitted = true;
+    };
+
     function interacted(field) {
         return vm.submitted || field.$dirty;
 
@@ -29,12 +34,10 @@ function RegisterController(Auth) {
     }
 
 
+
     function registerUser(user) {
         vm.message = null;
         vm.error = null;
-        vm.interacted = function (field) {
-            return $scope.submitted || field.$dirty;
-        };
 
 
         Auth.$createUserWithEmailAndPassword(user.email, user.password)
