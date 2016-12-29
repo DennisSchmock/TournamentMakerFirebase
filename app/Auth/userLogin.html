@@ -1,8 +1,11 @@
+<spinner name="loginspinner" img-src="bower_components/angular-spinners/ajaxspinner.gif"></spinner>
+
 <div ng-show="$ctrl.firebaseUser">
     <p>Hello, {{ $ctrl.firebaseUser.displayName }}</p>
     <button ng-click="$ctrl.signOut();$ctrl.auth.$signOut()">Sign Out</button>
 </div>
 <div ng-hide="$ctrl.firebaseUser">
+
     <form name="login-form" class="login-form" ng-submit="$ctrl.signIn()" novalidate>
         <table>
             <tr>

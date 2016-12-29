@@ -9,9 +9,9 @@ angular.module('myApp.auth')
 
     .controller('RegisterController', RegisterController);
 
-RegisterController.$inject = ['Auth', '$firebaseArray'];
+RegisterController.$inject = ['Auth', '$firebaseArray','spinnerService'];
 
-function RegisterController(Auth) {
+function RegisterController(Auth,$firebaseArray,spinnerService) {
     var vm = this;
     vm.user = {};
     vm.registerUser = registerUser;
@@ -38,6 +38,8 @@ function RegisterController(Auth) {
     function registerUser(user) {
         vm.message = null;
         vm.error = null;
+        spinnerService.show('booksSpinner');
+
 
 
         Auth.$createUserWithEmailAndPassword(user.email, user.password)

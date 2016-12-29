@@ -3,6 +3,7 @@
     <button ng-click="loginctrl.signOut();loginctrl.auth.$signOut()">Sign Out</button>
 </div>
 <div ng-hide="loginctrl.firebaseUser">
+
     <form name="loginform" ng-submit="loginctrl.signIn()" novalidate>
         <table>
             <tr>

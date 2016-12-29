@@ -12,7 +12,8 @@ angular.module('myApp', [
     'myApp.auth',
     'ui.bootstrap',
     'ngMessages',
-    'ngAnimate'
+    'ngAnimate',
+    'angularSpinners'
 
 ]).run(["$rootScope", "$location", function ($rootScope, $location) {
     $rootScope.$on("$routeChangeError", function (event, next, previous, error) {

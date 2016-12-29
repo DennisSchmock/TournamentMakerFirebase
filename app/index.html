@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My AngularJS App</title>
+    <title>iTournamentMaker</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -22,7 +22,9 @@
 
 
 </head>
-<body >
+<body>
+<spinner name="loginspinner" img-src="bower_components/angular-spinners/ajaxspinner.gif"></spinner>
+
 
 <nav class="navbar navbar-default" ng-controller="MainController as mactrl">
     <div class="container">
@@ -36,18 +38,21 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-left">
-                <li ><a href="#!/tournaments">Tournaments</a></li>
-                <li ><a href="#!/createtournament">Create</a></li>
-                <li ><a href="#!/players">Players</a></li>
-            </ul><ul class="nav navbar-nav navbar-right">
-                <li><user-login></user-login></li>
+                <li><a href="#!/tournaments">Tournaments</a></li>
+                <li><a href="#!/createtournament">Create</a></li>
+                <li><a href="#!/players">Players</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <user-login></user-login>
+                </li>
             </ul>
 
         </div>
     </div>
 
 </nav>
-<div> </div>
+<div></div>
 
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
@@ -71,6 +76,7 @@
 <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 <script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="bower_components/angular-spinners/dist/angular-spinners.min.js"></script>
 <script src="app.js"></script>
 <script src="main/MainController.js"></script>
 
